@@ -245,63 +245,11 @@ GET /metrics/dev-1/analytics?date_from=2026-04-01T00:00:00&date_to=2026-04-16T00
 - `POST /metrics`
 - `GET /metrics/{device_id}/analytics`
 
-### Прогон 1
-- всего запросов: **8482**
-- ошибок: **1**
-- median response time: **7 ms**
-- average response time: **11.59 ms**
-- throughput: **31.43 req/s**
-
-#### Детализация
-- `POST /metrics`
-  - 6310 запросов
-  - 1 ошибка
-  - average response time: **13.14 ms**
-  - median response time: **7 ms**
-  - throughput: **23.38 req/s**
-
-- `GET /metrics/{device_id}/analytics`
-  - 2172 запроса
-  - 0 ошибок
-  - average response time: **7.07 ms**
-  - median response time: **4 ms**
-  - throughput: **8.05 req/s**
-
----
-
-### Прогон 2
-- всего запросов: **14866**
-- ошибок: **0**
-- median response time: **41 ms**
-- average response time: **72.02 ms**
-- throughput: **247.77 req/s**
-
-#### Детализация
-- `POST /metrics`
-  - 11206 запросов
-  - 0 ошибок
-  - average response time: **76.19 ms**
-  - median response time: **46 ms**
-  - throughput: **186.77 req/s**
-
-- `GET /metrics/{device_id}/analytics`
-  - 3660 запросов
-  - 0 ошибок
-  - average response time: **59.24 ms**
-  - median response time: **27 ms**
-  - throughput: **61.00 req/s**
-
-
-## Скриншоты нагрузочного тестирования
-
-В README можно вставить скриншоты интерфейса Locust.
-
-Если изображения лежат в репозитории в папке `assets/`, добавь их так:
 
 ```md
-![Locust Run 1](assets/locust_run_1.png)
+![Locust Run 1](assets/locust_10_users.png)
 
-![Locust Run 2](assets/locust_run_2.png)
+![Locust Run 2](assets/locust_100_users.png)
 ```
 
 
