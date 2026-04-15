@@ -10,7 +10,7 @@ class MetricsService:
     @classmethod
     async def add_metrics_service(cls, device_id: str, x: float, y: float, z: float, session):
         new_metric = await MetricsRepository.add_metrics_repository(device_id, x, y, z, session)
-        return DeviceMetricsResponse(device_id=new_metric.device_id, x=new_metric.x, y=new_metric.y, z=new_metric.z)
+        return DeviceMetricsResponse(id = new_metric.id,device_id=new_metric.device_id, x=new_metric.x, y=new_metric.y, z=new_metric.z, created_at=new_metric.created_at)
 
     @classmethod
     async def analyze_metrics_service(

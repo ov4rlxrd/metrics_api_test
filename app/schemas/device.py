@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from pydantic import BaseModel, Field, ConfigDict, field_validator, EmailStr
 
 
@@ -8,10 +10,13 @@ class DeviceMetricsAdd(BaseModel):
     z:float = Field(default=0.0)
 
 class DeviceMetricsResponse(BaseModel):
+    id:int
     device_id: str
-    x:float
-    y:float
-    z:float
+    x: float = Field(default=0.0)
+    y: float = Field(default=0.0)
+    z: float = Field(default=0.0)
+    created_at: datetime
+
 
 
 class MetricStats(BaseModel):
