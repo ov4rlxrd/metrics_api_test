@@ -1,0 +1,19 @@
+# Test your FastAPI endpoints
+
+POST http://127.0.0.1:8001/metrics/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "device_id": "dev-1",
+  "x": 1.2,
+  "y": 2.4,
+  "z": 3.14
+}
+
+###
+
+GET http://127.0.0.1:8001/metrics/dev-1/analytics
+Accept: application/json
+
+###
