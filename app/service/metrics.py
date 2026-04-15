@@ -3,7 +3,7 @@ from datetime import datetime
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.reprository.metrics import MetricsRepository
-from app.schemas.device import DeviceMetricsResponse
+from app.schemas.device import DeviceMetricsResponse, DeviceMetricsAnalysisResponse, MetricStats
 
 
 class MetricsService:
@@ -22,28 +22,27 @@ class MetricsService:
     ):
         result = await MetricsRepository.analyze_metrics_repository(device_id, session, date_from, date_to)
 
-        response = {
-            "device_id": device_id,
-            "x": {
-                "min": result["x_min"],
-                "max": result["x_max"],
-                "count": result["x_count"],
-                "sum": result["x_sum"],
-                "median": result["x_median"],
-            },
-            "y": {
-                "min": result["y_min"],
-                "max": result["y_max"],
-                "count": result["y_count"],
-                "sum": result["y_sum"],
-                "median": result["y_median"],
-            },
-            "z": {
-                "min": result["z_min"],
-                "max": result["z_max"],
-                "count": result["z_count"],
-                "sum": result["z_sum"],
-                "median": result["z_median"],
-            },
-        }
-        return response
+        return DeviceMetricsAnalysisResponse(
+            device_id=device_id,
+            x=MetricStats(
+                min=result["x_min"],
+                max=result["x_max"],
+                count=result["x_count"],
+                sum=result["x_sum"],
+                median=result["x_median"],
+            ),
+            y=MetricStats(
+                min=result["y_min"],
+                max=result["y_max"],
+                count=result["y_count"],
+                sum=result["y_sum"],
+                median=result["y_median"],
+            ),
+            z=MetricStats(
+                min=result["z_min"],
+                max=result["z_max"],
+                count=result["z_count"],
+                sum=result["z_sum"],
+                median=result["z_median"],
+            ),
+        )
