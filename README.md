@@ -246,11 +246,11 @@ GET /metrics/dev-1/analytics?date_from=2026-04-01T00:00:00&date_to=2026-04-16T00
 - `GET /metrics/{device_id}/analytics`
 
 
-```md
+
 ![Locust Run 1](https://github.com/ov4rlxrd/metrics_api_test/blob/main/assets/locust_10_users.png)
 
-![Locust Run 2](assets/locust_100_users.png)
-```
+![Locust Run 2](https://github.com/ov4rlxrd/metrics_api_test/blob/main/assets/locust_100_users.png)
+
 
 
 ## Репозиторий
