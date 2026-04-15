@@ -112,20 +112,6 @@ PostgreSQL запускается в отдельном контейнере.
 - port: `5433`
 - database: `metrics_db`
 
----
-
-## Миграции
-
-Для миграций используется **Alembic**.
-
-Если нужно применить миграции вручную:
-
-```bash
-docker compose exec app python -m alembic upgrade head
-```
-
----
-
 ## API
 
 ### 1. Добавление метрик
